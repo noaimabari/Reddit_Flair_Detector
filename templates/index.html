@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Reddit Flair Detector</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  
+</head>
+
+<body>
+<h1 style = 'text-align:center'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reddit Flair Detector</h1>
+<hr>
+<br>
+<br>
+ <div class="login">
+  <br>
+  <h4>Enter URL of your Reddit Post</h4>
+    <form action = '/predict' method = 'Post'>
+      <input type="text" name="url" placeholder="url" required="required">
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+   <p style='color:red'>
+   {{ prediction_text }}
+   </p>
+<br>
+<br>
+<div>
+  <form action= '/automated_testing' method='post' enctype="multipart/form-data"> 
+    <h4 style = 'text-align:centre'>Please select a text file for automated testing</h4>
+      <input type="file" name="upload_file">
+      <button type = 'submit' class = 'btn btn-primary btn-block btn-large'>Submit</button>
+      <br>
+</div>
+ </div>
+
+
+</body>
+</html>
